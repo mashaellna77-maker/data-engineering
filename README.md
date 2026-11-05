@@ -177,4 +177,4 @@ Do not run concurrent writers against the same DuckDB file.
   as volume grows; measure them before choosing a larger execution engine.
 - Quarantine tables represent current rejected data, not review history.
 - Reconciliation mismatches remain visible warnings.
-- Fresh-environment reproduction still needs final verification.
+- Fresh local reproduction passed; see labs/docs/reproduction.md.
