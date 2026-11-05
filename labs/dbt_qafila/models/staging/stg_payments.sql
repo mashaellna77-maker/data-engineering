@@ -1,4 +1,4 @@
--- One row per payment attempt (failed attempts are real rows).
+-- One row per valid payment attempt.
 select
     payment_id,
     order_id,
@@ -8,6 +8,8 @@ select
     wallet_provider,
     status,
     card_last4,
-    created_at::timestamptz at time zone 'UTC'   as created_at_utc,
-    updated_at::timestamptz at time zone 'UTC'   as updated_at_utc
+    created_at::timestamptz at time zone 'UTC' as created_at_utc,
+    updated_at::timestamptz at time zone 'UTC' as updated_at_utc
 from {{ source('raw', 'payments') }}
+where amount > 0
+  and isfinite(amount)

@@ -1,0 +1,5 @@
+﻿
+# Local capstone temporary files and backups
+.tmp_dagster_home_*/
+capstone/pipeline.before_*.py
+capstone/stg_payments.before_quality.sql
