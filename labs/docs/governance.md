@@ -71,3 +71,25 @@ The raw and capstone artifact folders grant full control to:
 
 No Everyone or Users entries appeared in the folder-level checks.
 Child-file permissions were not individually inspected.
+## Proposed NDMO classification
+
+These levels are proposed for this synthetic capstone.
+The column-level inventory and protections above remain applicable.
+
+| Data | Proposed NDMO level | Protection and access |
+|---|---|---|
+| Customers, including person tokens and linked attributes | Restricted (مقيد) | Direct identifiers protected during ingestion; local access only. |
+| Orders and order items | Restricted (مقيد) | Local processing; no public individual purchase records. |
+| Payments, including card_last4 | Restricted (مقيد) | Local processing; only aggregate metrics are served. |
+| Delivery events, courier identifiers and locations | Restricted (مقيد) | Local processing; no public individual activity or location records. |
+| Reviews, customer links and review text | Restricted (مقيد) | Local processing; no public row-level review exports. |
+| Supplier prices | Restricted (مقيد) | Internal commercial data; local access only. |
+| Synthetic store and product reference data | Public (عام) | Non-personal reference data may be shared after review. |
+| Aggregate operations HTML | Public (عام), after review | Daily city totals without personal identifiers or free text. |
+
+Restricted data remains restricted after pseudonymization.
+Raw access is limited to the project owner and authorized
+local system administrators.
+
+Reference:
+https://sdaia.gov.sa/en/SDAIA/about/Pages/RegulationsAndPolicies.aspx
